@@ -22,22 +22,7 @@ public class TextFieldFrame extends JFrame
       setLayout(new FlowLayout());
 
       // construct textfield with 10 columns
-      textField1 = new JTextField(10); 
-      add(textField1); // add textField1 to JFrame
-
-      // construct textfield with default text
-      textField2 = new JTextField("Enter text here");
-      add(textField2); // add textField2 to JFrame
-
-      // construct textfield with default text and 21 columns
-      textField3 = new JTextField("Uneditable text field", 21);
-      textField3.setEditable(false); // disable editing
-      add(textField3); // add textField3 to JFrame
-
-      // construct passwordfield with default text
-      passwordField = new JPasswordField("Hidden text");
-      add(passwordField); // add passwordField to JFrame
-
+      textField1 = new JTextField(10);
       textField1.addActionListener(new ActionListener() {
          @Override
          public void actionPerformed(ActionEvent e) {
@@ -46,6 +31,11 @@ public class TextFieldFrame extends JFrame
             JOptionPane.showMessageDialog(null, string);
          }
       });
+      add(textField1); // add textField1 to JFrame
+
+      // construct textfield with default text
+      textField2 = new JTextField("Enter text here");
+
       textField2.addActionListener(new ActionListener() {
          @Override
          public void actionPerformed(ActionEvent e) {
@@ -53,7 +43,10 @@ public class TextFieldFrame extends JFrame
                     e.getActionCommand());
             JOptionPane.showMessageDialog(null, string);
          }
-      });
+      }); add(textField2); // add textField2 to JFrame
+
+      // construct textfield with default text and 21 columns
+      textField3 = new JTextField("Uneditable text field", 21);
       textField3.addActionListener(new ActionListener() {
          @Override
          public void actionPerformed(ActionEvent e) {
@@ -62,6 +55,11 @@ public class TextFieldFrame extends JFrame
             JOptionPane.showMessageDialog(null, string);
          }
       });
+      textField3.setEditable(false); // disable editing
+      add(textField3); // add textField3 to JFrame
+
+      // construct passwordfield with default text
+      passwordField = new JPasswordField("Hidden text");
       passwordField.addActionListener(new ActionListener() {
          @Override
          public void actionPerformed(ActionEvent e) {
@@ -69,7 +67,8 @@ public class TextFieldFrame extends JFrame
                     e.getActionCommand());
             JOptionPane.showMessageDialog(null, string);
          }
-      });
+      });   add(passwordField); // add passwordField to JFrame
+
    } // end TextFieldFrame constructor
 
 } // end class TextFieldFrame
