@@ -23,26 +23,21 @@ public class TextFieldFrame extends JFrame
 
       // construct textfield with 10 columns
       textField1 = new JTextField(10);
-      textField1.addActionListener(new ActionListener() {
-         @Override
-         public void actionPerformed(ActionEvent e) {
-            String string = String.format("textField1: %s",
-                    e.getActionCommand());
-            JOptionPane.showMessageDialog(null, string);
-         }
+      textField1.addActionListener(e -> {
+         String string = String.format("%s",
+                 e.getActionCommand());
+         JOptionPane.showMessageDialog(null, string);
       });
       add(textField1); // add textField1 to JFrame
 
       // construct textfield with default text
       textField2 = new JTextField("Enter text here");
 
-      textField2.addActionListener(new ActionListener() {
-         @Override
-         public void actionPerformed(ActionEvent e) {
+      textField2.addActionListener(e -> {
             String string = String.format("textField2: %s",
                     e.getActionCommand());
             JOptionPane.showMessageDialog(null, string);
-         }
+
       }); add(textField2); // add textField2 to JFrame
 
       // construct textfield with default text and 21 columns
@@ -63,8 +58,11 @@ public class TextFieldFrame extends JFrame
       passwordField.addActionListener(new ActionListener() {
          @Override
          public void actionPerformed(ActionEvent e) {
-            String string = String.format("Password: %s",
+            String string = String.format("%s",
                     e.getActionCommand());
+            if (string.equals("pass")) {
+               textField3.setEditable(true);
+            }
             JOptionPane.showMessageDialog(null, string);
          }
       });   add(passwordField); // add passwordField to JFrame
