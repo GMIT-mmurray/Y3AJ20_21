@@ -38,45 +38,39 @@ public class TextFieldFrame extends JFrame
       passwordField = new JPasswordField("Hidden text");
       add(passwordField); // add passwordField to JFrame
 
-      // register event handlers
-      TextFieldHandler handler = new TextFieldHandler();
-      textField1.addActionListener(handler);
-      textField2.addActionListener(handler);
-      textField3.addActionListener(handler);
-      passwordField.addActionListener(handler);
+      textField1.addActionListener(new ActionListener() {
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            String string = String.format("textField1: %s",
+                    e.getActionCommand());
+            JOptionPane.showMessageDialog(null, string);
+         }
+      });
+      textField2.addActionListener(new ActionListener() {
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            String string = String.format("textField2: %s",
+                    e.getActionCommand());
+            JOptionPane.showMessageDialog(null, string);
+         }
+      });
+      textField3.addActionListener(new ActionListener() {
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            String string = String.format("textField3: %s",
+                    e.getActionCommand());
+            JOptionPane.showMessageDialog(null, string);
+         }
+      });
+      passwordField.addActionListener(new ActionListener() {
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            String string = String.format("Password: %s",
+                    e.getActionCommand());
+            JOptionPane.showMessageDialog(null, string);
+         }
+      });
    } // end TextFieldFrame constructor
 
-   // private inner class for event handling
-   private class TextFieldHandler implements ActionListener 
-   {
-      // process textfield events
-      @Override
-      public void actionPerformed(ActionEvent event)
-      {
-         String string = ""; 
-         // user pressed Enter in JTextField textField1
-         if (event.getSource() == textField1)
-            string = String.format("textField1: %s",
-               event.getActionCommand());
-
-         // user pressed Enter in JTextField textField2
-         else if (event.getSource() == textField2)
-            string = String.format("textField2: %s",
-               event.getActionCommand());
-
-         // user pressed Enter in JTextField textField3
-         else if (event.getSource() == textField3)
-            string = String.format("textField3: %s", 
-               event.getActionCommand());
-
-         // user pressed Enter in JTextField passwordField
-         else if (event.getSource() == passwordField)
-            string = String.format("passwordField: %s", 
-               event.getActionCommand());
-
-         // display JTextField content
-         JOptionPane.showMessageDialog(null, string); 
-      } 
-   } // end private inner class TextFieldHandler
 } // end class TextFieldFrame
 

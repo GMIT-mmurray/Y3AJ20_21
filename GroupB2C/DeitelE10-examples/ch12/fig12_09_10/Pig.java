@@ -22,7 +22,7 @@
             Animal myPig1 = new Pig();
             myPig1.animalSound();
             myPig1.sleep();
-            myPig1.eat();
+//            myPig1.eat();
 
         }
     }
