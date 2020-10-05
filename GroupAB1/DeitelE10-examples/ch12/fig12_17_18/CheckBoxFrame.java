@@ -13,7 +13,7 @@ public class CheckBoxFrame extends JFrame
    private final JTextField textField; // displays text in changing fonts
    private final JCheckBox boldJCheckBox; // to select/deselect bold
    private final JCheckBox italicJCheckBox; // to select/deselect italic
-
+   private final JCheckBox size20JCheckBox; // size 20
    // CheckBoxFrame constructor adds JCheckBoxes to JFrame
    public CheckBoxFrame()
    {
@@ -22,18 +22,21 @@ public class CheckBoxFrame extends JFrame
 
       // set up JTextField and set its font
       textField = new JTextField("Watch the font style change", 20);
-      textField.setFont(new Font("Serif", Font.PLAIN, 14));
+      textField.setFont(new Font("Bookman Old Style", Font.PLAIN, 14));
       add(textField); // add textField to JFrame
 
       boldJCheckBox = new JCheckBox("Bold"); 
-      italicJCheckBox = new JCheckBox("Italic"); 
+      italicJCheckBox = new JCheckBox("Italic");
+      size20JCheckBox = new JCheckBox("Size 20");
       add(boldJCheckBox); // add bold checkbox to JFrame
       add(italicJCheckBox); // add italic checkbox to JFrame
+      add(size20JCheckBox);
 
       // register listeners for JCheckBoxes
       CheckBoxHandler handler = new CheckBoxHandler();
       boldJCheckBox.addItemListener(handler);
       italicJCheckBox.addItemListener(handler);
+      size20JCheckBox.addItemListener(handler);
    } 
 
    // private inner class for ItemListener event handling
@@ -46,7 +49,9 @@ public class CheckBoxFrame extends JFrame
          Font font = null; // stores the new Font
 
          // determine which CheckBoxes are checked and create Font
-         if (boldJCheckBox.isSelected() && italicJCheckBox.isSelected())
+         if (boldJCheckBox.isSelected() && italicJCheckBox.isSelected() && size20JCheckBox.isSelected())
+            font = new Font("Serif", Font.BOLD + Font.ITALIC, 20);
+         else if (boldJCheckBox.isSelected() && italicJCheckBox.isSelected())
             font = new Font("Serif", Font.BOLD + Font.ITALIC, 14);
          else if (boldJCheckBox.isSelected())
             font = new Font("Serif", Font.BOLD, 14);

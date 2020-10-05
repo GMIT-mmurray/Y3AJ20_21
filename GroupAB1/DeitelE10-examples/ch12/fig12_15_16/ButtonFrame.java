@@ -30,22 +30,23 @@ public class ButtonFrame extends JFrame
       add(fancyJButton); // add fancyJButton to JFrame
 
       // create new ButtonHandler for button event handling 
-      ButtonHandler handler = new ButtonHandler();
-      fancyJButton.addActionListener(handler);
-      plainJButton.addActionListener(handler);
-   }
 
-   // inner class for button event handling
-   private class ButtonHandler implements ActionListener 
-   {
-      // handle button event
-      @Override
-      public void actionPerformed(ActionEvent event)
-      {
-         JOptionPane.showMessageDialog(ButtonFrame.this, String.format(
-            "You pressed: %s", event.getActionCommand()));
-      }
-   } 
+      fancyJButton.addActionListener(new ActionListener() {
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(ButtonFrame.this, String.format(
+                    "You pressed: %s", e.getActionCommand()));
+         }
+      });
+      plainJButton.addActionListener(new ActionListener() {
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(ButtonFrame.this, String.format(
+                    "You pressed: %s", e.getActionCommand()));
+
+         }
+      });
+   }
 } // end class ButtonFrame
 
 /**************************************************************************

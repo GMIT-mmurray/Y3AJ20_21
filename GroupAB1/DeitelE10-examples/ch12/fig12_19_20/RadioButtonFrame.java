@@ -15,11 +15,14 @@ public class RadioButtonFrame extends JFrame
    private Font plainFont; // font for plain text
    private Font boldFont; // font for bold text
    private Font italicFont; // font for italic text
-   private Font boldItalicFont; // font for bold and italic text
+   private Font boldItalicFont; // font for bold and italic
+   private Font boldItalic20Font; // font for bold and italic 20 text
+
    private JRadioButton plainJRadioButton; // selects plain text
    private JRadioButton boldJRadioButton; // selects bold text
    private JRadioButton italicJRadioButton; // selects italic text
    private JRadioButton boldItalicJRadioButton; // bold and italic
+   private JRadioButton boldItalic20JRadioButton; // bold and italic and 20
    private ButtonGroup radioGroup; // buttongroup to hold radio buttons
 
    // RadioButtonFrame constructor adds JRadioButtons to JFrame
@@ -36,10 +39,13 @@ public class RadioButtonFrame extends JFrame
       boldJRadioButton = new JRadioButton("Bold", false);
       italicJRadioButton = new JRadioButton("Italic", false);
       boldItalicJRadioButton = new JRadioButton("Bold/Italic", false);
+      boldItalic20JRadioButton = new JRadioButton("Bold/Italic/20", false);
+
       add(plainJRadioButton); // add plain button to JFrame
       add(boldJRadioButton); // add bold button to JFrame
       add(italicJRadioButton); // add italic button to JFrame
       add(boldItalicJRadioButton); // add bold and italic button
+      add(boldItalic20JRadioButton); // add bold and italic button and 20
 
       // create logical relationship between JRadioButtons
       radioGroup = new ButtonGroup(); // create ButtonGroup
@@ -47,12 +53,14 @@ public class RadioButtonFrame extends JFrame
       radioGroup.add(boldJRadioButton); // add bold to group
       radioGroup.add(italicJRadioButton); // add italic to group
       radioGroup.add(boldItalicJRadioButton); // add bold and italic
+      radioGroup.add(boldItalic20JRadioButton); // add bold and italic and 20
 
       // create font objects
       plainFont = new Font("Serif", Font.PLAIN, 14);
       boldFont = new Font("Serif", Font.BOLD, 14);
       italicFont = new Font("Serif", Font.ITALIC, 14);
       boldItalicFont = new Font("Serif", Font.BOLD + Font.ITALIC, 14);
+      boldItalic20Font = new Font("Serif", Font.BOLD + Font.ITALIC, 20);
       textField.setFont(plainFont);
 
       // register events for JRadioButtons
@@ -64,6 +72,8 @@ public class RadioButtonFrame extends JFrame
          new RadioButtonHandler(italicFont));
       boldItalicJRadioButton.addItemListener(
          new RadioButtonHandler(boldItalicFont));
+      boldItalic20JRadioButton.addItemListener(
+              new RadioButtonHandler(boldItalic20Font));
    } 
 
    // private inner class to handle radio button events

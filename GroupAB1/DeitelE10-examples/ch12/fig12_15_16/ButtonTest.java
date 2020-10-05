@@ -9,7 +9,8 @@ public class ButtonTest
       ButtonFrame buttonFrame = new ButtonFrame(); 
       buttonFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       buttonFrame.setSize(275, 110); 
-      buttonFrame.setVisible(true); 
+      buttonFrame.pack();
+      buttonFrame.setVisible(true);
    } 
 } // end class ButtonTest
 
