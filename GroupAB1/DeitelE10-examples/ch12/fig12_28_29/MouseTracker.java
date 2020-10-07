@@ -1,15 +1,21 @@
 // Fig. 12.29: MouseTrackerFrame.java
 // Testing MouseTrackerFrame.
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class MouseTracker 
 {
    public static void main(String[] args)
-   { 
-      MouseTrackerFrame mouseTrackerFrame = new MouseTrackerFrame(); 
-      mouseTrackerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      mouseTrackerFrame.setSize(300, 100); 
-      mouseTrackerFrame.setVisible(true); 
+   {
+      SwingUtilities.invokeLater(new Runnable() {
+         @Override
+         public void run() {
+            MouseTrackerFrame mouseTrackerFrame = new MouseTrackerFrame();
+            mouseTrackerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            mouseTrackerFrame.setSize(300, 100);
+            mouseTrackerFrame.setVisible(true);
+         }
+      });
+
    } 
 } // end class MouseTracker
 

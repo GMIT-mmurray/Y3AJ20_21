@@ -35,7 +35,7 @@ public class MouseDetailsFrame extends JFrame
             event.getClickCount());
       
          if (event.isMetaDown()) // right mouse button   
-            details += " with right mouse button";
+            details += " with right mouse button"+xPos+" "+ yPos;
          else if (event.isAltDown()) // middle mouse button
             details += " with center mouse button";
          else // left mouse button                       

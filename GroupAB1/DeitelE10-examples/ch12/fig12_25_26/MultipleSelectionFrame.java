@@ -26,14 +26,11 @@ public class MultipleSelectionFrame extends JFrame
 
       colorJList = new JList<String>(colorNames); // list of color names
       colorJList.setVisibleRowCount(5); // show five rows
-      colorJList.setSelectionMode(
-         ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+      colorJList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
       add(new JScrollPane(colorJList)); // add list with scrollpane
 
       copyJButton = new JButton("Copy >>>"); 
-      copyJButton.addActionListener(
-         new ActionListener() // anonymous inner class 
-         {  
+      copyJButton.addActionListener(new ActionListener() {
             // handle button event
             @Override
             public void actionPerformed(ActionEvent event)
