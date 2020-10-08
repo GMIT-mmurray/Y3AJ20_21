@@ -31,9 +31,7 @@ public class ComboBoxFrame extends JFrame
       imagesJComboBox = new JComboBox<String>(names); // set up JComboBox
       imagesJComboBox.setMaximumRowCount(3); // display three rows
 
-      imagesJComboBox.addItemListener(
-         new ItemListener() // anonymous inner class
-         {
+      imagesJComboBox.addItemListener(new ItemListener() { // anonymous inner class
             // handle JComboBox event
             @Override
             public void itemStateChanged(ItemEvent event)

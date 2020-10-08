@@ -35,9 +35,7 @@ public class ListFrame extends JFrame
       // add a JScrollPane containing JList to frame
       add(new JScrollPane(colorJList));
 
-      colorJList.addListSelectionListener(
-         new ListSelectionListener() // anonymous inner class
-         {   
+      colorJList.addListSelectionListener(new ListSelectionListener() {  //inner class
             // handle list selection events
             @Override
             public void valueChanged(ListSelectionEvent event)

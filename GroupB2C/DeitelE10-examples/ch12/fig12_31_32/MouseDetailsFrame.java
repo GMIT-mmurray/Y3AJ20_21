@@ -18,7 +18,7 @@ public class MouseDetailsFrame extends JFrame
 
       statusBar = new JLabel("Click the mouse");
       add(statusBar, BorderLayout.SOUTH);
-      addMouseListener(new MouseClickHandler()); // add handler
+      addMouseListener(new MouseClickHandler()); // add handler to JFrame
    }
 
    // inner class to handle mouse events
@@ -35,9 +35,9 @@ public class MouseDetailsFrame extends JFrame
             event.getClickCount());
       
          if (event.isMetaDown()) // right mouse button   
-            details += " with right mouse button";
+            details += " with right mouse button"+xPos;
          else if (event.isAltDown()) // middle mouse button
-            details += " with center mouse button";
+            details += " with center mouse button"+yPos;
          else // left mouse button                       
             details += " with left mouse button";
 

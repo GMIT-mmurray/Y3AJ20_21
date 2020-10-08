@@ -38,7 +38,7 @@ public class PaintPanel extends JPanel
 
       // draw all 
       for (Point point : points)
-         g.fillOval(point.x, point.y, 4, 4);
+         g.fillOval(point.x, point.y, 10, 10);
    } 
 } // end class PaintPanel
 

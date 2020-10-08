@@ -2,9 +2,7 @@
 // Mouse event handling.
 import java.awt.Color;
 import java.awt.BorderLayout;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -30,11 +28,11 @@ public class MouseTrackerFrame extends JFrame
       // create and register listener for mouse and mouse motion events
       MouseHandler handler = new MouseHandler(); 
       mousePanel.addMouseListener(handler); 
-      mousePanel.addMouseMotionListener(handler); 
+      mousePanel.addMouseMotionListener(handler);
+      mousePanel.addMouseWheelListener(handler);
    } 
 
-   private class MouseHandler implements MouseListener, 
-      MouseMotionListener 
+   private class MouseHandler implements MouseListener,MouseMotionListener, MouseWheelListener
    {
       // MouseListener event handlers
       // handle event when mouse released immediately after press
@@ -93,7 +91,13 @@ public class MouseTrackerFrame extends JFrame
       {
          statusBar.setText(String.format("Moved at [%d, %d]", 
             event.getX(), event.getY()));
-      } 
+      }
+
+      @Override
+      public void mouseWheelMoved(MouseWheelEvent event) {
+         statusBar.setText(String.format("Mouse Wheel at [%d, %d]",
+                 event.getX(), event.getY()));
+      }
    } // end inner class MouseHandler
 } // end class MouseTrackerFrame
 

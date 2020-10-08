@@ -26,22 +26,18 @@ public class MultipleSelectionFrame extends JFrame
 
       colorJList = new JList<String>(colorNames); // list of color names
       colorJList.setVisibleRowCount(5); // show five rows
-      colorJList.setSelectionMode(
-         ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+      colorJList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
       add(new JScrollPane(colorJList)); // add list with scrollpane
 
       copyJButton = new JButton("Copy >>>"); 
-      copyJButton.addActionListener(
-         new ActionListener() // anonymous inner class 
-         {  
+      copyJButton.addActionListener(new ActionListener() {   // anonymous inner class
             // handle button event
             @Override
             public void actionPerformed(ActionEvent event)
             {
                // place selected values in copyJList
-               copyJList.setListData(
-                  colorJList.getSelectedValuesList().toArray(
-                     new String[0]));
+               String  s[] = colorJList.getSelectedValuesList().toArray(new String[0]);
+               copyJList.setListData(s);
             }
          } 
       ); 
@@ -52,8 +48,7 @@ public class MultipleSelectionFrame extends JFrame
       copyJList.setVisibleRowCount(5); // show 5 rows
       copyJList.setFixedCellWidth(100); // set width
       copyJList.setFixedCellHeight(15); // set height
-      copyJList.setSelectionMode(
-         ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+      copyJList.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
       add(new JScrollPane(copyJList)); // add list with scrollpane
    } 
 } // end class MultipleSelectionFrame
