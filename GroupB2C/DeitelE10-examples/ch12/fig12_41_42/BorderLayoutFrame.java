@@ -18,7 +18,7 @@ public class BorderLayoutFrame extends JFrame implements ActionListener
    {
       super("BorderLayout Demo");
 
-      layout = new BorderLayout(5, 5); // 5 pixel gaps
+      layout = new BorderLayout(15, 15); // 5 pixel gaps
       setLayout(layout);
       buttons = new JButton[names.length]; 
 
