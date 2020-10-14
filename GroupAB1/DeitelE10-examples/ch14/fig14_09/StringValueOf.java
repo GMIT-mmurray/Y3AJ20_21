@@ -18,6 +18,7 @@ public class StringValueOf
          "char array = %s\n", String.valueOf(charArray));
       System.out.printf("part of char array = %s\n", 
          String.valueOf(charArray, 3, 3));
+      String s = String.valueOf(booleanValue);
       System.out.printf(
          "boolean = %s\n", String.valueOf(booleanValue));
       System.out.printf(

@@ -6,7 +6,7 @@ public class StringConstructors
    public static void main(String[] args)
    {
       char[] charArray = {'b', 'i', 'r', 't', 'h', ' ', 'd', 'a', 'y'};
-      String s = new String("hello");
+      String s = new String("hello\n\r");
 
       // use String constructors
       String s1 = new String();

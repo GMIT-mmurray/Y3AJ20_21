@@ -18,7 +18,7 @@ public class StringMiscellaneous2
       // test toLowerCase and toUpperCase
       System.out.printf("s1.toUpperCase() = %s\n", s1.toUpperCase());
       System.out.printf("s2.toLowerCase() = %s\n\n", s2.toLowerCase());
-
+      s2 = s2.toLowerCase();
       // test trim method
       System.out.printf("s3 after trim = \"%s\"\n\n", s3.trim());
 
