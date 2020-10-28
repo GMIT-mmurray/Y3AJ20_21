@@ -9,7 +9,7 @@ public class RegexMatches
    {
       // create regular expression
       Pattern expression = 
-         Pattern.compile("J.*\\d[0-35-9]-\\d\\d-\\d\\d");
+         Pattern.compile("J.*\\d[0-35-9]-\\d\\d-\\d\\d",Pattern.CASE_INSENSITIVE);
       
       String string1 = "Jane's Birthday is 05-12-75\n" +
          "Dave's Birthday is 11-04-68\n" +

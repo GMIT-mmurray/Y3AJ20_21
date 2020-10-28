@@ -14,7 +14,7 @@ public class StringMiscellaneous2
       // test method replace      
       System.out.printf(
          "Replace 'l' with 'L' in s1: %s\n\n", s1.replace('l', 'L'));
-
+      s1 = s1.replace('l','L');
       // test toLowerCase and toUpperCase
       System.out.printf("s1.toUpperCase() = %s\n", s1.toUpperCase());
       System.out.printf("s2.toLowerCase() = %s\n\n", s2.toLowerCase());

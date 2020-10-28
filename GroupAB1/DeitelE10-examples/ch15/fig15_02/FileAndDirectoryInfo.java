@@ -1,10 +1,7 @@
 // Fig. 15.2: FileAndDirectoryInfo.java
 // File class used to obtain file and directory information.
 import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.util.Scanner;
 
 public class FileAndDirectoryInfo

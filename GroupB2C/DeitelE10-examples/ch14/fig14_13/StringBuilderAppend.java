@@ -19,30 +19,32 @@ public class StringBuilderAppend
       StringBuilder buffer = new StringBuilder();
 
       buffer.append(objectRef)
-            .append("%n")
+            .append("\n")
             .append(string)
-            .append("%n")
+            .append("\n")
             .append(charArray)
-            .append("%n")
+            .append("\n")
             .append(charArray, 0, 3)
-            .append("%n")
+            .append("\n")
             .append(booleanValue)
-            .append("%n")
+            .append("\n")
             .append(characterValue)
-            .append("%n")
+            .append("\n")
             .append(integerValue)
-            .append("%n")
+            .append("\n")
             .append(longValue)
-            .append("%n")
+            .append("\n")
             .append(floatValue)
-            .append("%n")
+            .append("\n")
             .append(doubleValue)
-            .append("%n")
+            .append("\n")
             .append(lastBuffer);
 
       System.out.printf("buffer contains%n%s%n", buffer.toString());
    } 
-} // end StringBuilderAppend
+}
+
+
 
 /**************************************************************************
  * (C) Copyright 1992-2014 by Deitel & Associates, Inc. and               *

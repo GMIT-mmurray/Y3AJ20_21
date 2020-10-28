@@ -21,17 +21,14 @@ public class CreateTextFile
    // open file clients.txt
    public static void openFile()
    {
-      try
-      {
+      try  {
          output = new Formatter("clients.txt"); // open the file
       }
-      catch (SecurityException securityException)
-      {
+      catch (SecurityException securityException)  {
          System.err.println("Write permission denied. Terminating.");
          System.exit(1); // terminate the program
       } 
-      catch (FileNotFoundException fileNotFoundException)
-      {
+      catch (FileNotFoundException fileNotFoundException)   {
          System.err.println("Error opening file. Terminating.");
          System.exit(1); // terminate the program
       } 
@@ -41,16 +38,16 @@ public class CreateTextFile
    public static void addRecords()
    {
       Scanner input = new Scanner(System.in);
-      System.out.printf("%s%n%s%n? ", 
+      System.out.printf("%s\n%s\n? ",
          "Enter account number, first name, last name and balance.",
          "Enter end-of-file indicator to end input.");
 
-      while (input.hasNext()) // loop until end-of-file indicator
+      while (input.hasNext()) // loop until end-of-file indicator Ctrl-D
       {
          try
          {
             // output new record to file; assumes valid input
-            output.format("%d %s %s %.2f%n", input.nextInt(),
+            output.format("%d %s %s %.2f\n", input.nextInt(),
                input.next(), input.next(), input.nextDouble());                             
          } 
          catch (FormatterClosedException formatterClosedException)

@@ -41,7 +41,7 @@ public class ReadTextFile
 
       try 
       {
-         while (input.hasNext()) // while there is more to read
+         while (input.hasNext()) // while there is more to read Breaks out when EOF arrives
          {
             // display record contents                     
             System.out.printf("%-10d%-12s%-12s%10.2f%n", input.nextInt(), 

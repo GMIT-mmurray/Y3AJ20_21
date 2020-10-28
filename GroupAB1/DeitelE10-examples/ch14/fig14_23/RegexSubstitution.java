@@ -36,7 +36,7 @@ public class RegexSubstitution
          "First 3 digits replaced by \"digit\" : %s\n", secondString);
 
       System.out.print("String split at commas: ");
-      String[] results = secondString.split(",\\s*"); // split on commas
+      String[] results = secondString.split(",\\s*"); // split on commas followed by a space
       System.out.println(Arrays.toString(results)); // display results
    } 
 } // end class RegexSubstitution

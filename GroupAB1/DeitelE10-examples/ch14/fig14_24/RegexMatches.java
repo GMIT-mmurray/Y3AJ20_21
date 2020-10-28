@@ -12,8 +12,8 @@ public class RegexMatches
          Pattern.compile("J.*\\d[0-35-9]-\\d\\d-\\d\\d");
       
       String string1 = "Jane's Birthday is 05-12-75\n" +
-         "Dave's Birthday is 11-04-68\n" +
-         "John's Birthday is 04-28-73\n" +
+         "Jave's Birthday is 11-06-68\n" +
+         "John's Birthday is 06-28-73\n" +
          "Joe's Birthday is 12-17-77";
 
       // match regular expression to string and print matches

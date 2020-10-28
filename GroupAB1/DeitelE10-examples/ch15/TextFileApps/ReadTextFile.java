@@ -22,12 +22,10 @@ public class ReadTextFile
    // open file clients.txt
    public static void openFile()
    {
-      try
-      {
+      try {
          input = new Scanner(Paths.get("clients.txt")); 
       } 
-      catch (IOException ioException)
-      {
+      catch (IOException ioException) {
          System.err.println("Error opening file. Terminating.");
          System.exit(1);
       } 
@@ -36,7 +34,7 @@ public class ReadTextFile
    // read record from file
    public static void readRecords()
    {
-      System.out.printf("%-10s%-12s%-12s%10s%n", "Account",
+      System.out.printf("%-10s%-12s%-12s%10s\n", "Account",
          "First Name", "Last Name", "Balance");
 
       try 
@@ -48,12 +46,10 @@ public class ReadTextFile
                input.next(), input.next(), input.nextDouble());
          }
       } 
-      catch (NoSuchElementException elementException)
-      {
+      catch (NoSuchElementException elementException)     {
          System.err.println("File improperly formed. Terminating.");
       } 
-      catch (IllegalStateException stateException)
-      {
+      catch (IllegalStateException stateException)  {
          System.err.println("Error reading from file. Terminating.");
       } 
    } // end method readRecords

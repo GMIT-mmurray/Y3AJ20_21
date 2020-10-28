@@ -28,6 +28,7 @@ public class StringValueOf
       System.out.printf(
          "double = %s\n", String.valueOf(doubleValue)); 
       System.out.printf("Object = %s\n", String.valueOf(objectRef));
+      String sf = String.valueOf(floatValue);
    } 
 } // end class StringValueOf
 
