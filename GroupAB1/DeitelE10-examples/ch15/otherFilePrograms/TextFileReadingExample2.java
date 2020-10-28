@@ -12,7 +12,7 @@ public class TextFileReadingExample2 {
 
     public static void main(String[] args) {
         try {
-            FileInputStream inputStream = new FileInputStream("clients.txt");
+            FileInputStream inputStream = new FileInputStream("MyFile.txt");
             InputStreamReader reader = new InputStreamReader(inputStream, "UTF-16");
             int character;
 
