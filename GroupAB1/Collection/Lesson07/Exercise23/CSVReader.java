@@ -28,7 +28,7 @@ public class CSVReader implements Closeable {
     }
 
     public int getLineCount() {
-        return lineCount;
+       return lineCount;
     }
 
     public String[] readRow() throws IOException {
