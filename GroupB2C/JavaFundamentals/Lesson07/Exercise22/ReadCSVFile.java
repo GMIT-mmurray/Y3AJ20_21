@@ -23,7 +23,7 @@ public class ReadCSVFile {
 
                 String [] split = line.split(",");
 
-                System.out.printf("%d - %s\n", lineCounter, split[1]);
+                System.out.printf("%d - %s\n", lineCounter, split[2]);
             }
         }
     }

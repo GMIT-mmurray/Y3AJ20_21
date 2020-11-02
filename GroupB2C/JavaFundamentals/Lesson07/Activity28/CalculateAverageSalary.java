@@ -12,13 +12,14 @@ public class CalculateAverageSalary {
 
     public static void main (String [] args) throws Exception {
         long start = System.currentTimeMillis();
-        Vector wages = loadWages(args[0]);
+        Vector<Integer> wages = loadWages(args[0]);
 
         int totalWage = 0;
         int maxWage = 0;
         int minWage = Integer.MAX_VALUE;
-        for (Object wageAsObject : wages) {
-            int wage = (int) wageAsObject;
+
+        for (Integer wageAsObject : wages) {
+            int wage =  wageAsObject;
             totalWage += wage;
 
             if (wage > maxWage) {
@@ -34,8 +35,8 @@ public class CalculateAverageSalary {
         System.out.printf("Average, Min, Max: %d, %d, %d\n", totalWage / wages.size(), minWage, maxWage);
     }
 
-    private static Vector loadWages(String pathToFile) throws Exception {
-        Vector result = new Vector();
+    private static Vector<Integer> loadWages(String pathToFile) throws Exception {
+        Vector<Integer> result = new Vector<>();
 
         FileReader fileReader = new FileReader(pathToFile);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
