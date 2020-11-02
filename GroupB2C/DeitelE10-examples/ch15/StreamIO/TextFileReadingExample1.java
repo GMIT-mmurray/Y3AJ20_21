@@ -1,3 +1,4 @@
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -10,13 +11,13 @@ public class TextFileReadingExample1 {
 
     public static void main(String[] args) {
         try {
-            FileReader reader = new FileReader("clients.txt");
-            int character;
+            BufferedReader br = new BufferedReader(new FileReader("clients.txt"));
+            String s = new String();
 
-            while ((character = reader.read()) != -1) {
-                System.out.print((char) character);
+            while ((s = br.readLine()) != null) {
+                System.out.print(s + "\n");
             }
-            reader.close();
+            br.close();
 
         } catch (IOException e) {
             e.printStackTrace();

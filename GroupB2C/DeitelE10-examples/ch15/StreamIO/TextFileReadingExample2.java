@@ -1,3 +1,4 @@
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,15 +12,15 @@ import java.io.InputStreamReader;
 public class TextFileReadingExample2 {
 
     public static void main(String[] args) {
-        try {
-            FileInputStream inputStream = new FileInputStream("clients.txt");
+        try (FileInputStream inputStream = new FileInputStream("MyFile.txt");
             InputStreamReader reader = new InputStreamReader(inputStream, "UTF-16");
-            int character;
+            BufferedReader br = new BufferedReader(reader);){
 
-            while ((character = reader.read()) != -1) {
-                System.out.print((char) character);
+            String s = new String();
+
+            while ((s = br.readLine()) != null) {
+                System.out.print(s + "\n");
             }
-            reader.close();
 
         } catch (IOException e) {
             e.printStackTrace();
