@@ -15,7 +15,7 @@ public class GradesLoader {
             String [] row = null;
             while ( (row = reader.readRow()) != null) {
                 Grade grade = Grade.fromValues(row);
-                grades.put(grade.email, grade);
+               // grades.put(grade.email, grade);
             }
         }
 
@@ -36,7 +36,7 @@ public class GradesLoader {
         Vector<Grade> grades = new Vector<>();
 
         BufferedReader lineReader = new BufferedReader(new FileReader(pathToFile));
-        try (CSVReader reader = new CSVReader(lineReader)) {
+        try (CSVReader reader = new CSVReader(lineReader,true)) {
             String [] row = null;
             while ( (row = reader.readRow()) != null) {
                 grades.add(Grade.fromValues(row));
