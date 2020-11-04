@@ -21,6 +21,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Lesson07/Snippet001_Comparable" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Lesson07/Snippet001_Generics" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Lesson07/Snippet001_Iterators_and_Iterable" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lesson07/Activity29Grade" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
