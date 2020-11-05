@@ -1,19 +1,39 @@
 public class Grade {
 
     public static Grade fromValues(String [] values) {
-        // int id = Integer.parseInt(values[0]);
-        String name = values[1].trim();
-        String email = values[2].trim();
-        return new Grade(1, name, email);
+        String lastName = values[0].trim();
+        String firstName = values[1].trim();
+        String SSN = values[2].trim();
+        float test1 = Float.parseFloat(values[3]);
+        float test2 = Float.parseFloat(values[4]);
+        float test3 = Float.parseFloat(values[5]);
+        float test4 = Float.parseFloat(values[6]);
+        float finalGrade = Float.parseFloat(values[7]);
+        String grade = values[8].trim();
+        return new Grade(firstName,lastName,SSN,test1,test2,test3,test4,finalGrade,grade);
     }
 
-    public int id;
-    public String name;
-    public String email;
+    public String firestname;
+    public String lastName;
+    public String SSN;
+    public float test1;
+    public float test2;
+    public float test3;
+    public float test4;
+    public float finalGrade;
+    public String grade;
 
-    public Grade(int id, String name, String email) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
+    public Grade(String firestname, String lastName, String SSN,
+                 float test1, float test2, float test3, float test4,
+                 float finalGrade, String grade) {
+        this.firestname = firestname;
+        this.lastName = lastName;
+        this.SSN = SSN;
+        this.test1 = test1;
+        this.test2 = test2;
+        this.test3 = test3;
+        this.test4 = test4;
+        this.finalGrade = finalGrade;
+        this.grade = grade;
     }
 }
