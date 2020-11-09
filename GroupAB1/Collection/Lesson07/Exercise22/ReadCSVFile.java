@@ -17,12 +17,13 @@ public class ReadCSVFile {
                 lineCounter++;
 
                 // Ignore the header
-                if (lineCounter != 0) {
-                    String [] split = line.split(",");
-                    System.out.printf("%d - %s\n", lineCounter, split[2]);
+                if (lineCounter == 0) {
+                    continue;
                 }
 
+                String [] split = line.split(",");
 
+                System.out.printf("%d - %s\n", lineCounter, split[1]);
             }
         }
     }

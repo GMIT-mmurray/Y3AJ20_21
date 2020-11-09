@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class FindUserHashtable {
 
     public static void main(String [] args) throws IOException {
-        Hashtable users = UsersLoader.loadUsersInHashtableByEmail(args[0]);
+        Hashtable<String, User> users = UsersLoader.loadUsersInHashtableByEmail(args[0]);
         System.out.printf("Loaded %d unique users.\n", users.size());
 
         System.out.print("Type a user email: ");
@@ -20,7 +20,7 @@ public class FindUserHashtable {
                 return;
             }
 
-            User user = (User) users.get(email);
+            User user =  users.get(email);
             System.out.printf("User with email '%s' found!", email);
             System.out.printf(" ID: %d, Name: %s\n", user.id, user.name);
         }
