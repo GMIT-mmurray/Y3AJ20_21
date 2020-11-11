@@ -49,10 +49,16 @@ public class EmployeeFinalVersion implements Comparable<EmployeeFinalVersion> {
      * Comparator to sort employees list or array in order of Salary
      */
     public static Comparator<EmployeeFinalVersion> SalaryComparator = new Comparator<EmployeeFinalVersion>() {
-
         @Override
         public int compare(EmployeeFinalVersion e1, EmployeeFinalVersion e2) {
             return (int) (e1.getSalary() - e2.getSalary());
+        }
+    };
+
+    public static Comparator<EmployeeFinalVersion> SalaryComparatorDec = new Comparator<EmployeeFinalVersion>() {
+        @Override
+        public int compare(EmployeeFinalVersion e1, EmployeeFinalVersion e2) {
+            return (int) (e2.getSalary() -e1.getSalary());
         }
     };
 

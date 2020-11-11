@@ -24,7 +24,11 @@ public class JavaObjectSortingFinal {
         //sort employees array using Comparator by Salary
         Arrays.sort(empArr, EmployeeFinalVersion.SalaryComparator);
         System.out.println("Employees list sorted by Salary:\n"+Arrays.toString(empArr));
-        
+
+        //sort employees array using Comparator by Salary Dec order
+        Arrays.sort(empArr, EmployeeFinalVersion.SalaryComparatorDec);
+        System.out.println("Employees list sorted by Salary Descending Order:\n"+Arrays.toString(empArr));
+
         //sort employees array using Comparator by Age
         Arrays.sort(empArr, EmployeeFinalVersion.AgeComparator);
         System.out.println("Employees list sorted by Age:\n"+Arrays.toString(empArr));
