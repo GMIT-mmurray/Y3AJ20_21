@@ -31,8 +31,7 @@ public class Employee {
     @Override
     //this is overridden to print the user-friendly information about the Employee
     public String toString() {
-        return "[id=" + this.id + ", name=" + this.name + ", age=" + this.age + ", salary=" +
-                this.salary + "]";
+        return "[id=" + this.id + ", name=" + this.name + ", age=" + this.age + ", salary=" + this.salary + "]";
     }
 
 }

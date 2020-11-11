@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class EmployeeComparable implements Comparable<Employee> {
+public class EmployeeComparable implements Comparable<EmployeeComparable> {
 
     private int id;
     private String name;
@@ -31,11 +31,11 @@ public class EmployeeComparable implements Comparable<Employee> {
     }
 
     @Override
-    public int compareTo(Employee emp) {
+    public int compareTo(EmployeeComparable emp) {
         //let's sort the employee based on an id in ascending order
         //returns a negative integer, zero, or a positive integer as this employee id
         //is less than, equal to, or greater than the specified object.
-        return (this.id - emp.getId());
+        return (emp.getAge()-this.age);
     }
 
     @Override
