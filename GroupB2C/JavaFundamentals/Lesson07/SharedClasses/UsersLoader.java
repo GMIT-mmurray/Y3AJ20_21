@@ -11,7 +11,7 @@ public class UsersLoader {
         Hashtable<String, User> users = new Hashtable<>();
 
         BufferedReader lineReader = new BufferedReader(new FileReader(pathToFile));
-        try (CSVReader reader = new CSVReader(lineReader)) {
+        try (CSVReader reader = new CSVReader(lineReader,true)) {
             String [] row = null;
             while ( (row = reader.readRow()) != null) {
                 User user = User.fromValues(row);

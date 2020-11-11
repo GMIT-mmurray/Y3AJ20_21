@@ -23,6 +23,26 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Snippet001_Comparable" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Snippet001_Generics" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Snippet001_Iterators_and_Iterable" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Activity27" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Activity28" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Activity29" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Activity29Grade" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Activity30" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Activity31" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Exercise22" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Exercise23" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Exercise24" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Exercise25" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Exercise26" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Exercise27" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Exercise28" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Exercise29" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Exercise30" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/SharedClasses" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Snippet001_Comparable" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Snippet001_Generics" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Snippet001_Iterators_and_Iterable" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Collection/Lesson07/Sorting" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
