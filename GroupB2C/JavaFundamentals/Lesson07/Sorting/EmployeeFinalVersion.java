@@ -77,7 +77,6 @@ public class EmployeeFinalVersion implements Comparable<EmployeeFinalVersion> {
      * Comparator to sort employees list or array in order of Name
      */
     public static Comparator<EmployeeFinalVersion> NameComparator = new Comparator<EmployeeFinalVersion>() {
-
         @Override
         public int compare(EmployeeFinalVersion e1, EmployeeFinalVersion e2) {
             return e1.getName().compareTo(e2.getName());

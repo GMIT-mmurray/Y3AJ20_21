@@ -17,7 +17,7 @@ public class FindByStringWithGenerics {
             int totalFound = 0;
             for (User user : users) {
                 if (user.email.toLowerCase().contains(toFind) ||
-                    user.name.toLowerCase().contains(toFind)) {
+                    user.name.toLowerCase().contains(toFind.toLowerCase())) {
 
                     System.out.printf("Found user: %s", user.name);
                     System.out.printf(" Email: %s\n", user.email);
