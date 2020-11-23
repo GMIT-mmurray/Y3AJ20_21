@@ -15,7 +15,7 @@ public class DTExamples {
         System.out.println(parsedDateTime);
         ZonedDateTime now = ZonedDateTime.now();
 
-        String timeStamp = "2010-01-01T12:00:00+01:00";
+        String timeStamp = "2010-01-01T12:00:00+06:30";
         ZonedDateTime localTimeObj = ZonedDateTime.parse(timeStamp);
         System.out.println(localTimeObj);
 
