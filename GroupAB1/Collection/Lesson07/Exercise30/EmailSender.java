@@ -10,7 +10,7 @@ public class EmailSender extends Thread {
         System.out.printf("Sending email to %s from %s\n",email,Thread.currentThread().getName());
         // Let's take some time to send the email
          try {
-             Thread.sleep(new Random().nextInt(100));
+             Thread.sleep(new Random().nextInt(500));
          } catch (InterruptedException e) {
              e.printStackTrace();
          }

@@ -1,4 +1,4 @@
-public class User {
+public class User implements Comparable<User> {
     
     public static User fromValues(String [] values) {
         int id = Integer.parseInt(values[0]);
@@ -15,5 +15,10 @@ public class User {
         this.id = id;
         this.name = name;
         this.email = email;
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return 1;
     }
 }

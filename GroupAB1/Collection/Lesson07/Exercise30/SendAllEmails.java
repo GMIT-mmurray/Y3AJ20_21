@@ -18,28 +18,30 @@ public class SendAllEmails {
                 // Enqueue email to send to
                 queue.offer(user.email);
 
-                sendEmailWhenReady(queue);
+               // sendEmailWhenReady(queue);
 
                 // Simulate slow reading from file
-                Thread.sleep(100);
+                Thread.sleep(50);
             }
         }
-
+         sendEmailWhenReady(queue);
         // Drain the queue
         while (!queue.isEmpty()) {
             sendEmailWhenReady(queue);
             // Wait before checking again
-            Thread.sleep(500);
+            Thread.sleep(50);
         }
-        while(Thread.activeCount() >7)
-             Thread.sleep(100);
+      //  while(Thread.activeCount() > 7)
+      //       Thread.sleep(100);
        System.out.println("Finished !!!");
        System.exit(0);
     }
 
     private static void sendEmailWhenReady(ArrayDeque<String> queue) throws Exception {
-        System.out.print("\nSending email from main Thread \n");
+        System.out.print("\nSending email from " + Thread.currentThread().getName()+"\n");
+
         new EmailSender(queue.poll()).start();
+
         Set<Thread> threads = Thread.getAllStackTraces().keySet();
         for (Thread t : threads) {
             String name = t.getName();

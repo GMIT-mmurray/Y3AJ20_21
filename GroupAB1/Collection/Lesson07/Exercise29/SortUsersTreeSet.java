@@ -29,7 +29,7 @@ public class SortUsersTreeSet {
 
         System.out.printf("Sorting by %s\n", input);
 
-        TreeSet<User> users = new TreeSet<>(comparator);
+        TreeSet<User> users = new TreeSet<>();
 
         UsersLoader.loadUsersIntoSet(args[0], users);
 

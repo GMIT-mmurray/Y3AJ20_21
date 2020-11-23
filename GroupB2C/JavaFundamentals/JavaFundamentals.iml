@@ -23,6 +23,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Lesson07/Snippet001_Iterators_and_Iterable" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Lesson07/Activity29Grades" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Lesson07/Sorting" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Lesson07/DTExamples" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
