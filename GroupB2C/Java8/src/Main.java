@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -41,14 +42,37 @@ public class Main {
         stream.forEach(p -> System.out.println(p));
         *//*************************************************************************/
 
-        Stream.generate(() -> (new Random()).nextInt(100)).limit(20).forEach(System.out::println);
+        //Stream.generate(() -> (new Random()).nextInt(100)).limit(100).forEach(System.out::println);
 
+        /*************************************************************************/
 
+/*
+        List<Integer> list = new ArrayList<Integer>();
+        for(int i = 1; i< 100; i++){
+            list.add(i);
+        }
+
+        List<Integer> evenNumbersList =  list.stream().filter(i -> i%2 == 0).collect(Collectors.toList());
+        System.out.print(evenNumbersList);
+
+        Integer[] evenNumbersArr =  list.stream().filter(i -> i%2 == 0).toArray(Integer[]::new);
+        System.out.print(evenNumbersArr);*/
+
+        /*************************************************************************/
+
+        List<String> memberNames = new ArrayList<>();
+        memberNames.add("Amitabh");
+        memberNames.add("Shekhar");
+        memberNames.add("Aman");
+        memberNames.add("Rahul");
+        memberNames.add("Shahrukh");
+        memberNames.add("Salman");
+        memberNames.add("Yana");
+        memberNames.add("Lokesh");
+
+        memberNames.stream().filter((s) -> s.startsWith("A")).forEach(System.out::println);
 
     }
-    /*************************************************************************/
-
-
 
 
 }
