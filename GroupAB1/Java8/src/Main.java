@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -117,7 +115,60 @@ public class Main implements MyFirstFunctionalInterface{
                                        .filter((s) -> s.startsWith("A"))
                                        .count();
 
-        System.out.println(totalMatched);
+        Optional<String> reduced = memberNames.stream()
+                                              .reduce((s1,s2) -> s1 + "#" + s2);
+                         reduced.ifPresent(System.out::println);
+
+        String firstMatchedName = memberNames.stream()
+                                             .filter((s) -> s.startsWith("L"))
+                                             .findFirst()
+                                             .get();
+
+        System.out.println(firstMatchedName);
+
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+
+        List<Integer> newList = list.stream()
+                                    .peek(System.out::println)
+                                    .collect(Collectors.toList());
+
+        System.out.println(newList);
+
+        Collection<String> list2 = Arrays.asList("A", "B", "C", "D", "A", "B", "C");
+
+// Get collection without duplicate i.e. distinct only
+        List<String> distinctElements = list2.stream()
+                                             .distinct()
+                                             .collect(Collectors.toList());
+
+//Let's verify distinct elements
+        System.out.println(distinctElements);
+
+        Stream<Integer> evenNumInfiniteStream = Stream.iterate(0, n -> n + 2);
+
+        List<Integer> newList1 = evenNumInfiniteStream.skip(5)
+                                                      .limit(10)
+                                                      .collect(Collectors.toList());
+                                 System.out.println(newList1);
+
+        List<Integer> list11 = Arrays.asList(1,2,3);
+        List<Integer> list21 = Arrays.asList(4,5,6);
+        List<Integer> list31 = Arrays.asList(7,8,9);
+
+        List<List<Integer>> listOfLists = Arrays.asList(list11, list21, list31);
+
+        List<Integer> listOfAllIntegers = listOfLists.stream()
+                                                     .flatMap(x -> x.stream())
+                                                     .collect(Collectors.toList());
+
+        System.out.println(listOfAllIntegers);
+
+        List<Integer> list41 = Arrays.asList(2, 4, 1, 3, 7, 5, 9, 6, 8);
+
+        Optional<Integer> minNumber = list41.stream()
+                                            .min((i, j) -> i.compareTo(j));
+
+        System.out.println(minNumber.get());
 
 
     }
