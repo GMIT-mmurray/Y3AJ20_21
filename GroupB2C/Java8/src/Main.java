@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -72,6 +70,84 @@ public class Main {
 
         memberNames.stream().filter((s) -> s.startsWith("A")).forEach(System.out::println);
 
+        memberNames.stream()
+                   .filter((s) -> s.startsWith("A"))
+                   .map(String::toUpperCase)
+                   .forEach(System.out::println);
+
+        memberNames.stream()
+                   .sorted()
+                   .map(String::toUpperCase)
+                   .forEach(System.out::println);
+
+        List<String> memNamesInUppercase = memberNames.stream()
+                                                      .sorted()
+                                                      .peek(System.out::println)
+                                                      .map(String::toUpperCase)
+                                                      .peek(System.out::println)
+                                                      .collect(Collectors.toList());
+
+       String[]  memNamesInUppercaseArray = memberNames.stream()
+                                                       .sorted()
+                                                       .peek(System.out::println)
+                                                       .map(String::toUpperCase)
+                                                       .peek(System.out::println)
+                                                       .toArray(String[]::new);
+
+        System.out.print(memNamesInUppercase);
+
+        boolean matchedResult = memberNames.stream()
+                                           .anyMatch((s) -> s.startsWith("A"));
+
+        System.out.println(matchedResult);
+
+        matchedResult = memberNames.stream()
+                                   .allMatch((s) -> s.startsWith("A"));
+
+        System.out.println(matchedResult);
+
+        matchedResult = memberNames.stream()
+                                   .noneMatch((s) -> s.startsWith("A"));
+
+        System.out.println(matchedResult);
+
+        long totalMatched = memberNames.stream()
+                                       .filter((s) -> s.startsWith("A"))
+                                       .count();
+
+        Optional<String> reduced = memberNames.stream()
+                .reduce((s1,s2) -> s1 + "#" + s2);
+
+        reduced.ifPresent(System.out::println);
+
+        String firstMatchedName = memberNames.stream()
+                                             .filter((s) -> s.startsWith("L"))
+                                             .findFirst()
+                                             .get();
+
+        System.out.println(firstMatchedName);
+
+
+        Stream<Integer> evenNumInfiniteStream = Stream.iterate(0, n -> n + 2);
+
+        List<Integer> newList = evenNumInfiniteStream
+                .skip(5)
+                .limit(10)
+                .collect(Collectors.toList());
+        System.out.println(newList);
+
+
+        List<Integer> list1 = Arrays.asList(1,2,3);
+        List<Integer> list2 = Arrays.asList(4,5,6);
+        List<Integer> list3 = Arrays.asList(7,8,9);
+
+        List<List<Integer>> listOfLists = Arrays.asList(list1, list2, list3);
+
+        List<Integer> listOfAllIntegers = listOfLists.stream()
+                                                     .flatMap(x -> x.stream())
+                                                     .collect(Collectors.toList());
+
+        System.out.println(listOfAllIntegers);
     }
 
 

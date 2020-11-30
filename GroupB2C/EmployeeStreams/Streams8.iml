@@ -2,9 +2,10 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$USER_HOME$/OneDrive - GMIT/Modules/Year 3/2020/CourseWork/Y3AJ20_21/GroupB2C/Streams8">
-      <sourceFolder url="file://$USER_HOME$/OneDrive - GMIT/Modules/Year 3/2020/CourseWork/Y3AJ20_21/GroupB2C/Streams8/src" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/src">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../Streams8" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
