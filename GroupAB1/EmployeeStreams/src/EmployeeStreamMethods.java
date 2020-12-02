@@ -35,8 +35,9 @@ public class EmployeeStreamMethods {
         empStreamBuilder.accept(arrayOfEmps[1]);
         empStreamBuilder.accept(arrayOfEmps[2]);
 
-        Stream<Employee> empStream = empStreamBuilder.build();
-
+        List<Employee> empStream = empStreamBuilder.build().collect(Collectors.toList());
+        System.out.println(empStreamBuilder);
+        System.out.println(empStream);
         }
 
     
@@ -48,8 +49,16 @@ public class EmployeeStreamMethods {
         };
 
         List<Employee> empList = Arrays.asList(arrayOfEmps);
+        System.out.println(empList);
+        for (int i =0; i < arrayOfEmps.length;i++)
+            System.out.println(arrayOfEmps[i]);
 
-        empList.stream().forEach(e -> e.salaryIncrement(10.0));
+        empList.stream()
+               .forEach(e -> e.salaryIncrement(10.0));
+
+        System.out.println(empList);
+        for (int i =0; i < arrayOfEmps.length;i++)
+            System.out.println(arrayOfEmps[i]);
 
     }
 

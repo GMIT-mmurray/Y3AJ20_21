@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Collectors/Collectors.iml" filepath="$PROJECT_DIR$/Collectors/Collectors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EmployeeStreams.iml" filepath="$PROJECT_DIR$/EmployeeStreams.iml" />
+    </modules>
+  </component>
+</project>
