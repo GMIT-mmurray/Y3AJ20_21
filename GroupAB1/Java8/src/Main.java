@@ -165,8 +165,7 @@ public class Main implements MyFirstFunctionalInterface{
 
         List<Integer> list41 = Arrays.asList(2, 4, 1, 3, 7, 5, 9, 6, 8);
 
-        Optional<Integer> minNumber = list41.stream()
-                                            .min((i, j) -> i.compareTo(j));
+        Optional<Integer> minNumber = list41.stream().min((i, j) -> i.compareTo(j));
 
         System.out.println(minNumber.get());
 

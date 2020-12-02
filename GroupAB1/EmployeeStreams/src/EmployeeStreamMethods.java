@@ -1,22 +1,11 @@
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.DoubleSummaryStatistics;
-import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Optional;
-import java.util.Set;
-import java.util.Vector;
+import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 
 
 public class EmployeeStreamMethods {
@@ -86,8 +75,8 @@ public class EmployeeStreamMethods {
         Integer[] empIds = { 1, 2, 3 };
 
         List<Employee> employees = Stream.of(empIds)
-                                         .map(employeeRepository::findById)
-                                         .collect(Collectors.toList());
+                .map(employeeRepository::findById)
+                .collect(Collectors.toList());
 
          }
 
@@ -99,8 +88,8 @@ public class EmployeeStreamMethods {
                 Arrays.asList("Mark", "Zuckerberg"));
 
         List<String> namesFlatStream = namesNested.stream()
-                                                  .flatMap(Collection::stream)
-                                                  .collect(Collectors.toList());
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
 
            }
 
@@ -109,10 +98,10 @@ public class EmployeeStreamMethods {
         Integer[] empIds = { 1, 2, 3, 4 };
 
         List<Employee> employees = Stream.of(empIds)
-                                         .map(employeeRepository::findById)
-                                         .filter(e -> e != null)
-                                         .filter(e -> e.getSalary() > 200000)
-                                         .collect(Collectors.toList());
+                .map(employeeRepository::findById)
+                .filter(e -> e != null)
+                .filter(e -> e.getSalary() > 200000)
+                .collect(Collectors.toList());
 
        }
 
@@ -121,11 +110,11 @@ public class EmployeeStreamMethods {
         Integer[] empIds = { 1, 2, 3, 4 };
 
         Employee employee = Stream.of(empIds)
-                                  .map(employeeRepository::findById)
-                                  .filter(e -> e != null)
-                                  .filter(e -> e.getSalary() > 100000)
-                                  .findFirst()
-                                  .orElse(null);
+                .map(employeeRepository::findById)
+                .filter(e -> e != null)
+                .filter(e -> e.getSalary() > 100000)
+                .findFirst()
+                .orElse(null);
 
      }
 
@@ -144,8 +133,8 @@ public class EmployeeStreamMethods {
     
     public void whenStreamCount_thenGetElementCount() {
         Long empCount = empList.stream()
-                               .filter(e -> e.getSalary() > 200000)
-                               .count();
+                .filter(e -> e.getSalary() > 200000)
+                .count();
 
         }
 
@@ -153,9 +142,10 @@ public class EmployeeStreamMethods {
     public void whenLimitInfiniteStream_thenGetFiniteElements() {
         Stream<Integer> infiniteStream = Stream.iterate(2, i -> i * 2);
 
-        List<Integer> collect = infiniteStream.skip(3)
-                                              .limit(5)
-                                              .collect(Collectors.toList());
+        List<Integer> collect = infiniteStream
+                .skip(3)
+                .limit(5)
+                .collect(Collectors.toList());
 
 
     }
@@ -163,8 +153,8 @@ public class EmployeeStreamMethods {
     
     public void whenSortStream_thenGetSortedStream() {
         List<Employee> employees = empList.stream()
-                                          .sorted((e1, e2) -> e1.getName().compareTo(e2.getName()))
-                                          .collect(Collectors.toList());
+                .sorted((e1, e2) -> e1.getName().compareTo(e2.getName()))
+                .collect(Collectors.toList());
 
        }
 
@@ -172,16 +162,16 @@ public class EmployeeStreamMethods {
     
     public void whenFindMin_thenGetMinElementFromStream() {
         Employee firstEmp = empList.stream()
-                                   .min((e1, e2) -> e1.getId() - e2.getId())
-                                   .orElseThrow(NoSuchElementException::new);
+                .min((e1, e2) -> e1.getId() - e2.getId())
+                .orElseThrow(NoSuchElementException::new);
 
         }
 
     
     public void whenFindMax_thenGetMaxElementFromStream() {
         Employee maxSalEmp = empList.stream()
-                                    .max(Comparator.comparing(Employee::getSalary))
-                                    .orElseThrow(NoSuchElementException::new);
+                .max(Comparator.comparing(Employee::getSalary))
+                .orElseThrow(NoSuchElementException::new);
 
            }
 
@@ -205,96 +195,98 @@ public class EmployeeStreamMethods {
     
     public void whenFindMaxOnIntStream_thenGetMaxInteger() {
         Integer latestEmpId = empList.stream()
-                                     .mapToInt(Employee::getId)
-                                     .max()
-                                     .orElseThrow(NoSuchElementException::new);
+                .mapToInt(Employee::getId)
+                .max()
+                .orElseThrow(NoSuchElementException::new);
 
         }
 
     
     public void whenApplySumOnIntStream_thenGetSum() {
         Double avgSal = empList.stream()
-                               .mapToDouble(Employee::getSalary)
-                               .average()
-                               .orElseThrow(NoSuchElementException::new);
+                .mapToDouble(Employee::getSalary)
+                .average()
+                .orElseThrow(NoSuchElementException::new);
 
         }
 
     
     public void whenApplyReduceOnStream_thenGetValue() {
         Double sumSal = empList.stream()
-                               .map(Employee::getSalary)
-                               .reduce(0.0, Double::sum);
+                .map(Employee::getSalary)
+                .reduce(0.0, Double::sum);
 
         }
 
     
     public void whenCollectByJoining_thenGetJoinedString() {
         String empNames = empList.stream()
-                                 .map(Employee::getName)
-                                 .collect(Collectors.joining(", "))
-                                 .toString();
+                .map(Employee::getName)
+                .collect(Collectors.joining(", "))
+                .toString();
 
         }
 
     
     public void whenCollectBySet_thenGetSet() {
         Set<String> empNames = empList.stream()
-                                      .map(Employee::getName)
-                                      .collect(Collectors.toSet());
+                .map(Employee::getName)
+                .collect(Collectors.toSet());
 
         }
 
     
     public void whenToVectorCollection_thenGetVector() {
         Vector<String> empNames = empList.stream()
-                                         .map(Employee::getName)
-                                         .collect(Collectors.toCollection(Vector::new));
+                .map(Employee::getName)
+                .collect(Collectors.toCollection(Vector::new));
 
        }
 
     
     public void whenApplySummarizing_thenGetBasicStats() {
         DoubleSummaryStatistics stats = empList.stream()
-                                               .collect(Collectors.summarizingDouble(Employee::getSalary));
+                                               .collect(Collectors
+                                               .summarizingDouble(Employee::getSalary));
 
          }
 
     
     public void whenApplySummaryStatistics_thenGetBasicStats() {
         DoubleSummaryStatistics stats = empList.stream()
-                                               .mapToDouble(Employee::getSalary)
-                                               .summaryStatistics();
+                .mapToDouble(Employee::getSalary)
+                .summaryStatistics();
 
         }
 
     
     public void whenStreamPartition_thenGetMap() {
         List<Integer> intList = Arrays.asList(2, 4, 5, 6, 8);
-        Map<Boolean, List<Integer>> isEven = intList.stream().collect(Collectors.partitioningBy(i -> i % 2 == 0));
+        Map<Boolean, List<Integer>> isEven = intList.stream().collect(
+                Collectors.partitioningBy(i -> i % 2 == 0));
 
         }
 
     
     public void whenStreamGroupingBy_thenGetMap() {
-        Map<Character, List<Employee>> groupByAlphabet = empList.stream()
-                                                                .collect( Collectors.groupingBy(e -> new Character(e.getName().charAt(0))));
+        Map<Character, List<Employee>> groupByAlphabet = empList.stream().collect(
+                Collectors.groupingBy(e -> new Character(e.getName().charAt(0))));
 
         }
 
     
     public void whenStreamMapping_thenGetMap() {
-        Map<Character, List<Integer>> idGroupedByAlphabet = empList.stream()
-                                                                   .collect(Collectors.groupingBy(e -> new Character(e.getName().charAt(0)),
-                                                                                     Collectors.mapping(Employee::getId, Collectors.toList())));
+        Map<Character, List<Integer>> idGroupedByAlphabet = empList.stream().collect(
+                Collectors.groupingBy(e -> new Character(e.getName().charAt(0)),
+                        Collectors.mapping(Employee::getId, Collectors.toList())));
 
         }
 
     
     public void whenStreamReducing_thenGetValue() {
         Double percentage = 10.0;
-        Double salIncrOverhead = empList.stream()
-                                        .collect(Collectors.reducing(0.0, e -> e.getSalary() * percentage / 100, (s1, s2) -> s1 + s2));
+        Double salIncrOverhead = empList.stream().collect(Collectors.reducing(
+                0.0, e -> e.getSalary() * percentage / 100, (s1, s2) -> s1 + s2));
 
         }
 
@@ -302,9 +294,9 @@ public class EmployeeStreamMethods {
     public void whenStreamGroupingAndReducing_thenGetMap() {
         Comparator<Employee> byNameLength = Comparator.comparing(Employee::getName);
 
-        Map<Character, Optional<Employee>> longestNameByAlphabet = empList.stream()
-                                                                          .collect( Collectors.groupingBy(e -> new Character(e.getName().charAt(0)),
-                                                                                                              Collectors.reducing(BinaryOperator.maxBy(byNameLength))));
+        Map<Character, Optional<Employee>> longestNameByAlphabet = empList.stream().collect(
+                Collectors.groupingBy(e -> new Character(e.getName().charAt(0)),
+                        Collectors.reducing(BinaryOperator.maxBy(byNameLength))));
 
         }
 
@@ -350,7 +342,7 @@ public class EmployeeStreamMethods {
 
         try (PrintWriter pw = new PrintWriter(
              Files.newBufferedWriter(Paths.get(fileName)))) {
-                                     Stream.of(words).forEach(pw::println);
+               Stream.of(words).forEach(pw::println);
         }
     }
 
