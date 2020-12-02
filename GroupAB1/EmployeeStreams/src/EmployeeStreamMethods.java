@@ -84,8 +84,8 @@ public class EmployeeStreamMethods {
         Integer[] empIds = { 1, 2, 3 };
 
         List<Employee> employees = Stream.of(empIds)
-                .map(employeeRepository::findById)
-                .collect(Collectors.toList());
+                                         .map((i) -> employeeRepository.findById(i))
+                                         .collect(Collectors.toList());
 
          }
 
@@ -97,8 +97,8 @@ public class EmployeeStreamMethods {
                 Arrays.asList("Mark", "Zuckerberg"));
 
         List<String> namesFlatStream = namesNested.stream()
-                .flatMap(Collection::stream)
-                .collect(Collectors.toList());
+                                                  .flatMap(Collection::stream)
+                                                  .collect(Collectors.toList());
 
            }
 
@@ -107,10 +107,10 @@ public class EmployeeStreamMethods {
         Integer[] empIds = { 1, 2, 3, 4 };
 
         List<Employee> employees = Stream.of(empIds)
-                .map(employeeRepository::findById)
-                .filter(e -> e != null)
-                .filter(e -> e.getSalary() > 200000)
-                .collect(Collectors.toList());
+                                         .map(employeeRepository::findById)
+                                         .filter(e -> e != null)
+                                         .filter(e -> e.getSalary() > 200000)
+                                         .collect(Collectors.toList());
 
        }
 
@@ -119,11 +119,11 @@ public class EmployeeStreamMethods {
         Integer[] empIds = { 1, 2, 3, 4 };
 
         Employee employee = Stream.of(empIds)
-                .map(employeeRepository::findById)
-                .filter(e -> e != null)
-                .filter(e -> e.getSalary() > 100000)
-                .findFirst()
-                .orElse(null);
+                                  .map(employeeRepository::findById)
+                                  .filter(e -> e != null)
+                                  .filter(e -> e.getSalary() > 1000000)
+                                  .findFirst()
+                                  .orElse(null);
 
      }
 
@@ -142,8 +142,8 @@ public class EmployeeStreamMethods {
     
     public void whenStreamCount_thenGetElementCount() {
         Long empCount = empList.stream()
-                .filter(e -> e.getSalary() > 200000)
-                .count();
+                               .filter(e -> e.getSalary() > 200000)
+                               .count();
 
         }
 
@@ -151,10 +151,9 @@ public class EmployeeStreamMethods {
     public void whenLimitInfiniteStream_thenGetFiniteElements() {
         Stream<Integer> infiniteStream = Stream.iterate(2, i -> i * 2);
 
-        List<Integer> collect = infiniteStream
-                .skip(3)
-                .limit(5)
-                .collect(Collectors.toList());
+        List<Integer> collect = infiniteStream.skip(3)
+                                              .limit(5)
+                                              .collect(Collectors.toList());
 
 
     }
@@ -162,8 +161,8 @@ public class EmployeeStreamMethods {
     
     public void whenSortStream_thenGetSortedStream() {
         List<Employee> employees = empList.stream()
-                .sorted((e1, e2) -> e1.getName().compareTo(e2.getName()))
-                .collect(Collectors.toList());
+                                          .sorted((e1, e2) -> e1.getName().compareTo(e2.getName()))
+                                          .collect(Collectors.toList());
 
        }
 
