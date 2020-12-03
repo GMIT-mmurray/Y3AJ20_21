@@ -170,16 +170,16 @@ public class EmployeeStreamMethods {
     
     public void whenFindMin_thenGetMinElementFromStream() {
         Employee firstEmp = empList.stream()
-                .min((e1, e2) -> e1.getId() - e2.getId())
-                .orElseThrow(NoSuchElementException::new);
+                                   .min((e1, e2) -> e1.getId() - e2.getId())
+                                   .orElseThrow(NoSuchElementException::new);
 
         }
 
     
     public void whenFindMax_thenGetMaxElementFromStream() {
         Employee maxSalEmp = empList.stream()
-                .max(Comparator.comparing(Employee::getSalary))
-                .orElseThrow(NoSuchElementException::new);
+                                    .max(Comparator.comparing(Employee::getSalary))
+                                    .orElseThrow(NoSuchElementException::new);
 
            }
 

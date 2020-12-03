@@ -271,7 +271,8 @@ public class EmployeeStreamMethods {
     
     public void whenStreamPartition_thenGetMap() {
         List<Integer> intList = Arrays.asList(2, 4, 5, 6, 8);
-        Map<Boolean, List<Integer>> isEven = intList.stream().collect(Collectors.partitioningBy(i -> i % 2 == 0));
+        Map<Boolean, List<Integer>> isEven = intList.stream()
+                                                    .collect(Collectors.partitioningBy(i -> i % 2 == 0));
 
         }
 
@@ -304,7 +305,7 @@ public class EmployeeStreamMethods {
 
         Map<Character, Optional<Employee>> longestNameByAlphabet = empList.stream()
                                                                           .collect( Collectors.groupingBy(e -> new Character(e.getName().charAt(0)),
-                                                                                                              Collectors.reducing(BinaryOperator.maxBy(byNameLength))));
+                                                                                                           Collectors.reducing(BinaryOperator.maxBy(byNameLength))));
 
         }
 
@@ -348,9 +349,8 @@ public class EmployeeStreamMethods {
                 "level"
         };
 
-        try (PrintWriter pw = new PrintWriter(
-             Files.newBufferedWriter(Paths.get(fileName)))) {
-                                     Stream.of(words).forEach(pw::println);
+        try (PrintWriter pw = new PrintWriter(Files.newBufferedWriter(Paths.get(fileName)))) {
+                                              Stream.of(words).forEach(pw::println);
         }
     }
 
