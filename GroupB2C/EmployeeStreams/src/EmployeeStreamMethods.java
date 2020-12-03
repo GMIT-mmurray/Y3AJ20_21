@@ -29,6 +29,7 @@ public class EmployeeStreamMethods {
     };
 
     private static List<Employee> empList = Arrays.asList(arrayOfEmps);
+
     private static EmployeeRepository employeeRepository = new EmployeeRepository(empList);
 
 
@@ -46,8 +47,10 @@ public class EmployeeStreamMethods {
         empStreamBuilder.accept(arrayOfEmps[1]);
         empStreamBuilder.accept(arrayOfEmps[2]);
 
-        Stream<Employee> empStream = empStreamBuilder.build();
-
+        List <Employee> empStream = empStreamBuilder.build().collect(Collectors.toList());
+        System.out.println(empStreamBuilder);
+        empStream.forEach(System.out::println);
+        System.out.println(empStream);
         }
 
     
