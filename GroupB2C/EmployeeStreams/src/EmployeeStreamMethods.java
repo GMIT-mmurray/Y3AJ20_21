@@ -89,7 +89,8 @@ public class EmployeeStreamMethods {
         Integer[] empIds = { 1, 2, 3 };
 
         List<Employee> employees = Stream.of(empIds)
-                                         .map(employeeRepository::findById)
+                                         //.map(employeeRepository::findById)
+                                         .map((i)->employeeRepository.findById(i))
                                          .collect(Collectors.toList());
 
          }
@@ -126,7 +127,7 @@ public class EmployeeStreamMethods {
         Employee employee = Stream.of(empIds)
                                   .map(employeeRepository::findById)
                                   .filter(e -> e != null)
-                                  .filter(e -> e.getSalary() > 100000)
+                                  .filter(e -> e.getSalary() > 1000000)
                                   .findFirst()
                                   .orElse(null);
 
@@ -154,7 +155,7 @@ public class EmployeeStreamMethods {
 
     
     public void whenLimitInfiniteStream_thenGetFiniteElements() {
-        Stream<Integer> infiniteStream = Stream.iterate(2, i -> i * 2);
+        Stream<Integer> infiniteStream = Stream.iterate( 2,i -> i * 2);
 
         List<Integer> collect = infiniteStream.skip(3)
                                               .limit(5)
@@ -166,7 +167,7 @@ public class EmployeeStreamMethods {
     
     public void whenSortStream_thenGetSortedStream() {
         List<Employee> employees = empList.stream()
-                                          .sorted((e1, e2) -> e1.getName().compareTo(e2.getName()))
+                                          .sorted((e1, e2) -> e1.getSalary().compareTo(e2.getSalary()))
                                           .collect(Collectors.toList());
 
        }
