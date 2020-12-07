@@ -34,36 +34,44 @@ public class Java8CollectorExamples {
 
 // Collectors.toList() Example
 
-        List<String> namesList = employeeList.stream().map(e -> e.getName()).collect(Collectors.toList());
+        List<String> namesList = employeeList.stream()
+                                             .map(e -> e.getName())
+                                             .collect(Collectors.toList());
         System.out.println(namesList);
 
 // Collectors.toSet() Example
-        Set<String> regionSet = employeeList.stream().map(e -> e.getRegion()).collect(Collectors.toSet());
+        Set<String> regionSet = employeeList.stream()
+                                            .map(e -> e.getRegion())
+                                            .collect(Collectors.toSet());
         System.out.println(regionSet);
         regionSet.add("hello");
         System.out.println(regionSet);
 
 // Collectors.toUnmodifiableSet() Example
 
-        Set<Double> unmodifiableSet = employeeList.stream().map(e -> e.getSal())
-                .collect(Collectors.toUnmodifiableSet());
+        Set<Double> unmodifiableSet = employeeList.stream()
+                                                  .map(e -> e.getSal())
+                                                  .collect(Collectors.toUnmodifiableSet());
         System.out.println(unmodifiableSet);
 // unmodifiableSet.add(10983d);
 
 // employeeList.add(null);
 
-        Set<Employee> empSet = employeeList.stream().collect(Collectors.toUnmodifiableSet());
+        Set<Employee> empSet = employeeList.stream()
+                                           .collect(Collectors.toUnmodifiableSet());
 
 // Collectors.toUnmodifiableList(() Example
 // employeeList.add(null);
-        List<Double> unmodifiableList = employeeList.stream().map(e -> e.getSal())
-                .collect(Collectors.toUnmodifiableList());
+        List<Double> unmodifiableList = employeeList.stream()
+                                                    .map(e -> e.getSal())
+                                                    .collect(Collectors.toUnmodifiableList());
         System.out.println(unmodifiableList);
 
 // Collectors.toCollection() Example
 
-        List<String> namesLinkedList = employeeList.stream().map(e -> e.getName())
-                                                            .collect(Collectors.toCollection(LinkedList::new));
+        List<String> namesLinkedList = employeeList.stream()
+                                                   .map(e -> e.getName())
+                                                   .collect(Collectors.toCollection(LinkedList::new));
         System.out.println(namesLinkedList);
 
         Set<String> regionTreeSet = employeeList.stream().map(e -> e.getRegion())

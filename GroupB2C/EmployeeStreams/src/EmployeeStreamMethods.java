@@ -178,6 +178,7 @@ public class EmployeeStreamMethods {
         Employee firstEmp = empList.stream()
                                    .min((e1, e2) -> e1.getId() - e2.getId())
                                    .orElseThrow(NoSuchElementException::new);
+        System.out.println(firstEmp);
 
         }
 
@@ -186,13 +187,16 @@ public class EmployeeStreamMethods {
         Employee maxSalEmp = empList.stream()
                                     .max(Comparator.comparing(Employee::getSalary))
                                     .orElseThrow(NoSuchElementException::new);
+        System.out.println(maxSalEmp);
 
            }
 
     
     public void whenApplyDistinct_thenRemoveDuplicatesFromStream() {
         List<Integer> intList = Arrays.asList(2, 5, 3, 2, 4, 3);
-        List<Integer> distinctIntList = intList.stream().distinct().collect(Collectors.toList());
+        List<Integer> distinctIntList = intList.stream()
+                                               .distinct()
+                                               .collect(Collectors.toList());
 
        }
 
