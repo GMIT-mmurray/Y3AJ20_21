@@ -9,6 +9,13 @@ public class Main {
        // esm.whenFlatMapEmployeeNames_thenGetNameStream();
        // esm.whenFilterEmployees_thenGetFilteredStream();
        // esm.whenFindFirst_thenGetFirstEmployeeInStream();
-       esm.whenSortStream_thenGetSortedStream();
+       //esm.whenSortStream_thenGetSortedStream();
+       // esm.whenFindMax_thenGetMaxElementFromStream();
+       // esm.whenFindMin_thenGetMinElementFromStream();
+        //esm.whenApplyMatch_thenReturnBoolean();
+        esm.whenFindMaxOnIntStream_thenGetMaxInteger();
+        esm.whenApplySumOnIntStream_thenGetSum();
+        esm.whenApplySummarizing_thenGetBasicStats();
+        esm.whenApplySummaryStatistics_thenGetBasicStats();
     }
 }

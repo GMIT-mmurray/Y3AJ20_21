@@ -186,7 +186,9 @@ public class EmployeeStreamMethods {
     
     public void whenApplyDistinct_thenRemoveDuplicatesFromStream() {
         List<Integer> intList = Arrays.asList(2, 5, 3, 2, 4, 3);
-        List<Integer> distinctIntList = intList.stream().distinct().collect(Collectors.toList());
+        List<Integer> distinctIntList = intList.stream()
+                                               .distinct()
+                                               .collect(Collectors.toList());
 
        }
 
@@ -203,18 +205,18 @@ public class EmployeeStreamMethods {
     
     public void whenFindMaxOnIntStream_thenGetMaxInteger() {
         Integer latestEmpId = empList.stream()
-                .mapToInt(Employee::getId)
-                .max()
-                .orElseThrow(NoSuchElementException::new);
+                                     .mapToInt(Employee::getId)
+                                     .max()
+                                     .orElseThrow(NoSuchElementException::new);
 
         }
 
     
     public void whenApplySumOnIntStream_thenGetSum() {
         Double avgSal = empList.stream()
-                .mapToDouble(Employee::getSalary)
-                .average()
-                .orElseThrow(NoSuchElementException::new);
+                               .mapToDouble(Employee::getSalary)
+                               .average()
+                               .orElseThrow(NoSuchElementException::new);
 
         }
 
@@ -254,24 +256,22 @@ public class EmployeeStreamMethods {
     
     public void whenApplySummarizing_thenGetBasicStats() {
         DoubleSummaryStatistics stats = empList.stream()
-                                               .collect(Collectors
-                                               .summarizingDouble(Employee::getSalary));
+                                               .collect(Collectors.summarizingDouble(Employee::getSalary));
 
          }
 
     
     public void whenApplySummaryStatistics_thenGetBasicStats() {
         DoubleSummaryStatistics stats = empList.stream()
-                .mapToDouble(Employee::getSalary)
-                .summaryStatistics();
+                                               .mapToDouble(Employee::getSalary)
+                                               .summaryStatistics();
 
         }
 
     
     public void whenStreamPartition_thenGetMap() {
         List<Integer> intList = Arrays.asList(2, 4, 5, 6, 8);
-        Map<Boolean, List<Integer>> isEven = intList.stream().collect(
-                Collectors.partitioningBy(i -> i % 2 == 0));
+        Map<Boolean, List<Integer>> isEven = intList.stream().collect(Collectors.partitioningBy(i -> i % 2 == 0));
 
         }
 
