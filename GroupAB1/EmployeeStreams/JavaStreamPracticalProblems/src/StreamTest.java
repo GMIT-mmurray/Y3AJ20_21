@@ -25,6 +25,27 @@ public class StreamTest {
 
         List<Student> students = Arrays.asList(student1, student2, student3);
 
+        Student KhyatiStudent = students.stream()
+                .filter(s -> s.getName().equals("Khyati"))
+                .findFirst()
+                .orElseThrow(NoSuchElementException::new);
 
+        Optional<Student> stud = students.stream()
+                .filter(s -> s.getName().equals("Khyati"))
+                .findFirst();
+        Student s1 = stud.get();
+
+        Student s2 = students.stream()
+                             .filter(s -> s.getAddress().getZipcode().equals("1235"))
+                             .findFirst()
+                             .orElseThrow(NoSuchElementException::new);
+
+        List<Student> s3 = students.stream()
+                .filter(s -> s.getAddress().getZipcode().equals("1235"))
+                .collect(Collectors.toList());
+
+        List<Student> s4 = students.stream()
+                .filter(s -> s.getMobileNumbers().stream().anyMatch(m -> m.getNumber().equals("3333")))
+                .collect(Collectors.toList());
     }
 }
