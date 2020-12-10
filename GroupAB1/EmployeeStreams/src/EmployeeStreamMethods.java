@@ -270,8 +270,8 @@ public class EmployeeStreamMethods {
 
     
     public void whenStreamPartition_thenGetMap() {
-        List<Integer> intList = Arrays.asList(2, 4, 5, 6, 8);
-        Map<Boolean, List<Integer>> isEven = intList.stream().collect(Collectors.partitioningBy(i -> i % 2 == 0));
+        List<Integer> intList = Arrays.asList(2, 4, 5, 6, 8,43,55,66,100,1000000003);
+        Map<Boolean, List<Integer>> isEven = intList.stream().collect(Collectors.partitioningBy(i -> i % 4 == 0));
 
         }
 

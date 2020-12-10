@@ -25,19 +25,27 @@ public class StreamTest {
 
         List<Student> students = Arrays.asList(student1, student2, student3);
 
-            Student student =     students.stream()
-                                 .filter(s -> s.getName().equals("Jayesh"))
-                                 .findFirst()
-                                 .orElseThrow(NoSuchElementException::new);
+        Student student = students.stream()
+                .filter(s -> s.getName().equals("Jayesh"))
+                .findFirst()
+                .orElseThrow(NoSuchElementException::new);
 
-            student = students.stream()
-                    .filter(s -> s.getAddress().getZipcode().equals("1235"))
-                    .findFirst()
-                    .orElseThrow(NoSuchElementException::new);
+        student = students.stream()
+                .filter(s -> s.getAddress().getZipcode().equals("1235"))
+                .findFirst()
+                .orElseThrow(NoSuchElementException::new);
 
-              List<Student> studentList = students.stream()
-                                                  .filter(s -> s.getMobileNumbers().stream().anyMatch((m) ->m.getNumber().equals("3333") && ))
-                                                  .collect(Collectors.toList());
+        List<Student> studentList = students.stream()
+                .filter(s -> s.getMobileNumbers().stream().anyMatch((m) -> m.getNumber().equals("3333") || m.getNumber().equals("4444")))
+                .collect(Collectors.toList());
+
+        String studentListNames = studentList.stream()
+                .map(n -> n.getName())
+                .collect(Collectors.joining(",", "{{{", "]]]"));
+
+        String studentListAdd = students.stream()
+                .map(n -> n.getAddress().getZipcode())
+                .collect(Collectors.joining("......", "<<<<", ">>>>"));
 
     }
 }

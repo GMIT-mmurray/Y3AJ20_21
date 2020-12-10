@@ -36,7 +36,7 @@ public class Java8CollectorExamples {
 // Collectors.toUnmodifiableSet() Example
 
         Set<Double> unmodifiableSet = employeeList.stream().map(e -> e.getSal())
-                .collect(Collectors.toUnmodifiableSet());
+                                                           .collect(Collectors.toUnmodifiableSet());
         System.out.println(unmodifiableSet);
 // unmodifiableSet.add(10983d);
 
@@ -46,8 +46,9 @@ public class Java8CollectorExamples {
 
 // Collectors.toUnmodifiableList(() Example
 // employeeList.add(null);
-        List<Double> unmodifiableList = employeeList.stream().map(e -> e.getSal())
-                .collect(Collectors.toUnmodifiableList());
+        List<Double> unmodifiableList = employeeList.stream()
+                                                    .map(e -> e.getSal())
+                                                    .collect(Collectors.toUnmodifiableList());
         System.out.println(unmodifiableList);
 
 // Collectors.toCollection() Example
@@ -66,7 +67,7 @@ public class Java8CollectorExamples {
         System.out.println(empMap);
 
 // with duplicate key. uncomment to work with toMap() for duplicate merger.
-// employeeList.add(new Employee(400, "Larry Page", 59, "Africa", 450000));
+        employeeList.add(new Employee(400, "Larry Page", 159, "Africa", 1450000));
 
         Map<Integer, Employee> empDupMap = employeeList.stream()
                                                        .collect(Collectors.toMap((e) -> e.getId(), Function.identity(), (emp, sameEmp) -> sameEmp));
@@ -74,7 +75,7 @@ public class Java8CollectorExamples {
 
 // Collectors.toUnmodifiableMap() Example
         Map<Integer, Employee> empUnmodifiedMap = employeeList.stream()
-                .collect(Collectors.toMap((e) -> e.getId(), Function.identity(), (emp, sameEmp) -> sameEmp));
+                                                              .collect(Collectors.toMap((e) -> e.getId(), Function.identity(), (emp, sameEmp) -> sameEmp));
         System.out.println(empUnmodifiedMap);
 
 // Collector.summingInt() Example
@@ -109,7 +110,7 @@ public class Java8CollectorExamples {
 
 // Collectors.groupingBy() Example
         Map<String, List<Employee>> groupByRegion = employeeList.stream()
-                .collect(Collectors.groupingBy((Employee e) -> e.getRegion()));
+                                                                .collect(Collectors.groupingBy((Employee e) -> e.getRegion()));
         System.out.println("groupByRegion :: " + groupByRegion);
 
 // groupingBy for set.
@@ -205,7 +206,7 @@ public class Java8CollectorExamples {
 
         Map<String, Long> itemsCountByGender = customersList.stream()
                 .collect(Collectors.groupingBy((Customer c) -> c.getGender(),
-                        Collectors.flatMapping(customer -> customer.getLineItems().stream(), Collectors.counting())));
+                                                                            Collectors.flatMapping(customer -> customer.getLineItems().stream(), Collectors.counting())));
         System.out.println("itemsCountByGender " + itemsCountByGender);
 
 // Collectors.maxBy() Example

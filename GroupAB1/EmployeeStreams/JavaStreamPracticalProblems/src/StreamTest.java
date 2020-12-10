@@ -45,7 +45,15 @@ public class StreamTest {
                 .collect(Collectors.toList());
 
         List<Student> s4 = students.stream()
-                .filter(s -> s.getMobileNumbers().stream().anyMatch(m -> m.getNumber().equals("3333")))
+                .filter(s -> s.getMobileNumbers().stream().anyMatch(m -> m.getNumber().equals("3333") || m.getNumber().equals("4444")))
                 .collect(Collectors.toList());
+
+       String nameString = s4.stream()
+                            .map(n -> n.getName())
+                            .collect(Collectors.joining(",","<",">"));
+        String addString = s4.stream()
+                .map(a -> a.getAddress().getZipcode())
+                .collect(Collectors.joining(",","{","}"));
+
     }
 }

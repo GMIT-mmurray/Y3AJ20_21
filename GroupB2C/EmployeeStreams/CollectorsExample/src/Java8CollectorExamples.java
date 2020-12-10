@@ -1,13 +1,4 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.DoubleSummaryStatistics;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -39,10 +30,15 @@ public class Java8CollectorExamples {
                                              .collect(Collectors.toList());
         System.out.println(namesList);
 
+        List<Double> salList =  employeeList.stream()
+                                            .map(Employee::getSal)
+                                            .collect(Collectors.toList());
+        System.out.println(salList);
+
 // Collectors.toSet() Example
         Set<String> regionSet = employeeList.stream()
-                                            .map(e -> e.getRegion())
-                                            .collect(Collectors.toSet());
+                                            .map(Employee::getRegion)
+                                            .collect(Collectors.toCollection(TreeSet::new));
         System.out.println(regionSet);
         regionSet.add("hello");
         System.out.println(regionSet);

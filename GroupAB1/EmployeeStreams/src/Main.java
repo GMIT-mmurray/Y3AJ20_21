@@ -13,9 +13,11 @@ public class Main {
        // esm.whenFindMax_thenGetMaxElementFromStream();
        // esm.whenFindMin_thenGetMinElementFromStream();
         //esm.whenApplyMatch_thenReturnBoolean();
-        esm.whenFindMaxOnIntStream_thenGetMaxInteger();
-        esm.whenApplySumOnIntStream_thenGetSum();
-        esm.whenApplySummarizing_thenGetBasicStats();
-        esm.whenApplySummaryStatistics_thenGetBasicStats();
+        //esm.whenFindMaxOnIntStream_thenGetMaxInteger();
+        //esm.whenApplySumOnIntStream_thenGetSum();
+        //esm.whenApplySummarizing_thenGetBasicStats();
+        //esm.whenApplySummaryStatistics_thenGetBasicStats();
+        esm.whenStreamPartition_thenGetMap();
+
     }
 }
